@@ -1,0 +1,21 @@
+doctype html 
+
+html(lang=language) 
+  head 
+    block page_title
+      title This is the page title 
+    meta(charset="UTF-8")
+    link(rel="stylesheet", href="/stylesheets/application.css")
+  body
+    nav
+      ul
+        each item in countries
+          li
+            a(href=item.path class=currentPathClass(item.path, currentPath))
+              img.flag(src=item.flagURL
+                    alt=item.alt
+                    title=item.title)
+    header 
+    block header
+    main 
+    block mainContent
